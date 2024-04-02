@@ -1,0 +1,10 @@
+:root {
+    --primary-color: hsl(0, 100%, 50%);
+    --secondary-color: hsl(0, 0%, 0%);
+    // these are examples
+    // to talk over the theme of the app
+}
+
+// SCSS variables mapping (works with 'use')
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
