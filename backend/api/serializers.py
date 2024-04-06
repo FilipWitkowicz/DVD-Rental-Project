@@ -1,8 +1,18 @@
 from rest_framework.serializers import ModelSerializer
-from .models import Note
+from .models import Cassette, Movie
 
 
-class NoteSerializer(ModelSerializer):
+class CassetteSerializer(ModelSerializer):
     class Meta:
-        model = Note
+        model = Cassette
         fields = '__all__'
+
+class MovieSerializer(ModelSerializer):
+    class Meta:
+        model = Movie
+        fields = '__all__'
+
+# class UserSerializer(ModelSerializer):
+#     class Meta:
+#         model = User
+#         fields = '__all__'

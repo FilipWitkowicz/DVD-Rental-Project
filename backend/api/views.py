@@ -1,13 +1,12 @@
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from .models import Note
-from .serializers import NoteSerializer
+from .serializers import CassetteSerializer, MovieSerializer
+from .models import Cassette, Movie
 
 
 @api_view(['GET'])
 def getRoutes(request):
-
     routes = [
         {
             'Endpoint': '/notes/',
@@ -42,15 +41,44 @@ def getRoutes(request):
     ]
     return Response(routes)
 
+
 @api_view(['GET'])
-def getNotes(request):
-    notes = Note.objects.all()
-    serializer = NoteSerializer(notes, many=True)
+def getCassettes(request):
+    notes = Cassette.objects.all()
+    serializer = CassetteSerializer(notes, many=True)
     return Response(serializer.data)
 
 
 @api_view(['GET', 'POST'])
-def getNote(request, pk):
-    note = Note.objects.get(id=pk)
-    serializer = NoteSerializer(note, many=False)
+def getCassette(request, pk):
+    note = Cassette.objects.get(id=pk)
+    serializer = CassetteSerializer(note, many=False)
     return Response(serializer.data)
+
+
+@api_view(['GET'])
+def getMovies(request):
+    notes = Movie.objects.all()
+    serializer = MovieSerializer(notes, many=True)
+    return Response(serializer.data)
+
+
+@api_view(['GET', 'POST'])
+def getMovie(request, pk):
+    note = Movie.objects.get(id=pk)
+    serializer = MovieSerializer(note, many=False)
+    return Response(serializer.data)
+
+
+# @api_view(['GET'])
+# def getUsers(request):
+#     notes = User.objects.all()
+#     serializer = UserSerializer(notes, many=True)
+#     return Response(serializer.data)
+#
+#
+# @api_view(['GET', 'POST'])
+# def getUser(request, pk):
+#     note = User.objects.get(id=pk)
+#     serializer = UserSerializer(note, many=False)
+#     return Response(serializer.data)
