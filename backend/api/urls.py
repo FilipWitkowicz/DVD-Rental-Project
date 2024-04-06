@@ -8,6 +8,6 @@ urlpatterns = [
     path('cassette/<str:pk>', views.getCassette, name="cassette"),
     path('movie/', views.getMovies, name="movies"),
     path('movie/<str:pk>', views.getMovie, name="movie"),
-    # path('User/', views.getUsers, name="notes"),
-    # path('User/<str:pk>', views.getUser, name="note"),
+    path('rent/', views.rentMovie, name="rent"),
+    path('return/', views.returnMovie, name="return"),
 ]

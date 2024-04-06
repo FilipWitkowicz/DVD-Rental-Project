@@ -7,3 +7,4 @@ venv/
 #other
 
 package-lock.json
+.vscode/
