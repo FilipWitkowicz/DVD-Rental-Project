@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from .serializers import CassetteSerializer, MovieSerializer
-from .models import Cassette, Movie, Event
+from .serializers import DVDSerializer, MovieSerializer
+from .models import DVD, Movie, Event
 from django.contrib.auth.models import User
 import json
 
@@ -21,16 +21,16 @@ def getRoutes(request):
 
 
 @api_view(['GET'])
-def getCassettes(request):
-    notes = Cassette.objects.all()
-    serializer = CassetteSerializer(notes, many=True)
+def getDVDs(request):
+    notes = DVD.objects.all()
+    serializer = DVDSerializer(notes, many=True)
     return Response(serializer.data)
 
 
 @api_view(['GET', 'POST'])
-def getCassette(request, pk):
-    note = Cassette.objects.get(id=pk)
-    serializer = CassetteSerializer(note, many=False)
+def getDVD(request, pk):
+    note = DVD.objects.get(id=pk)
+    serializer = DVDSerializer(note, many=False)
     return Response(serializer.data)
 
 
@@ -50,15 +50,15 @@ def getMovie(request, pk):
 @api_view(['POST'])
 def rentMovie(request):
     info = json.loads(request.body.decode("utf-8"))
-    # { 'user_id': 1, 'cassette_id': 1 }
+    # { 'user_id': 1, 'DVD_id': 1 }
     user = User.objects.get(id=info['user_id'])
-    cassette = Cassette.objects.get(id=info['cassette_id'])
-    cassette.status = 2
-    cassette.renter = user
-    cassette.save()
+    DVD = DVD.objects.get(id=info['DVD_id'])
+    DVD.status = 2
+    DVD.renter = user
+    DVD.save()
     event = Event.objects.create(
         status=2,
-        cassette=cassette,
+        DVD=DVD,
         renter=user
     )
     event.save()
@@ -73,15 +73,15 @@ def rentMovie(request):
 @api_view(['POST'])
 def returnMovie(request):
     info = json.loads(request.body.decode("utf-8"))
-    # { 'user_id': 1, 'cassette_id': 1 }
+    # { 'user_id': 1, 'DVD_id': 1 }
     user = User.objects.get(id=info['user_id'])
-    cassette = Cassette.objects.get(id=info['cassette_id'])
-    cassette.status = 1
-    cassette.renter = None
-    cassette.save()
+    DVD = DVD.objects.get(id=info['DVD_id'])
+    DVD.status = 1
+    DVD.renter = None
+    DVD.save()
     event = Event.objects.create(
         status=1,
-        cassette=cassette,
+        DVD=DVD,
         renter=user
     )
     event.save()
