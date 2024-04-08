@@ -47,28 +47,28 @@ def getMovie(request, pk):
     serializer = MovieSerializer(note, many=False)
     return Response(serializer.data)
 
-@api_view(['POST'])
-def rentMovie(request):
-    info = json.loads(request.body.decode("utf-8"))
-    # { 'user_id': 1, 'DVD_id': 1 }
-    user = User.objects.get(id=info['user_id'])
-    DVD = DVD.objects.get(id=info['DVD_id'])
-    DVD.status = 2
-    DVD.renter = user
-    DVD.save()
-    event = Event.objects.create(
-        status=2,
-        DVD=DVD,
-        renter=user
-    )
-    event.save()
+# @api_view(['POST'])
+# def rentMovie(request):
+#     info = json.loads(request.body.decode("utf-8"))
+#     # { 'user_id': 1, 'DVD_id': 1 }
+#     user = User.objects.get(id=info['user_id'])
+#     DVD = DVD.objects.get(id=info['DVD_id'])
+#     DVD.status = 2
+#     DVD.renter = user
+#     DVD.save()
+#     event = Event.objects.create(
+#         status=2,
+#         DVD=DVD,
+#         renter=user
+#     )
+#     event.save()
 
-    return Response(
-        status=200,
-        content=bytes('{"status": "%s"}'
-        % ("Movie rented successfully"),'UTF-8'),
-        content_type="application/json",
-    )
+#     return Response(
+#         status=200,
+#         content=bytes('{"status": "%s"}'
+#         % ("Movie rented successfully"),'UTF-8'),
+#         content_type="application/json",
+#     )
 
 @api_view(['POST'])
 def returnMovie(request):
@@ -93,4 +93,28 @@ def returnMovie(request):
         content_type="application/json",
     )
 
-
+@api_view(['POST'])
+def rentMovie(request):
+    info = json.loads(request.body.decode("utf-8"))
+    # { 'user_id': 1, 'movie_id': 1 }
+    user = User.objects.get(id=info['user_id'])
+    movie = Movie.objects.get(id=info['movie_id'])
+    DVDs = DVD.objects.get.all()
+    for DVD in DVDs:
+        if DVD.movie == movie:
+            DVD.status = 2
+            DVD.renter = user
+            DVD.save()
+            event = Event.objects.create(
+                status=2,
+                DVD=DVD,
+                renter=user
+            )
+            event.save()
+    return Response(
+        status=200,
+        content=bytes('{"status": "%s"}'
+        % ("Movie rented successfully"),'UTF-8'),
+        content_type="application/json",
+    )
+#jako response powinnismy dodac nr id przydzielonej kasety??
