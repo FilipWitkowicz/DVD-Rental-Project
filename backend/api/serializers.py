@@ -1,18 +1,13 @@
 from rest_framework.serializers import ModelSerializer
-from .models import Cassette, Movie
+from .models import DVD, Movie
 
 
-class CassetteSerializer(ModelSerializer):
+class DVDSerializer(ModelSerializer):
     class Meta:
-        model = Cassette
+        model = DVD
         fields = '__all__'
 
 class MovieSerializer(ModelSerializer):
     class Meta:
         model = Movie
         fields = '__all__'
-
-# class UserSerializer(ModelSerializer):
-#     class Meta:
-#         model = User
-#         fields = '__all__'
