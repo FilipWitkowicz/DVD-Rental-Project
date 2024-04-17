@@ -1,13 +1,14 @@
 import { useState } from "react";
-import api from "../api";
 import { useNavigate } from "react-router-dom";
-import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
-import "../styles/App.scss"
+import api from "../../api";
+import { ACCESS_TOKEN, REFRESH_TOKEN } from "../../constants";
 
-function Form({ route, method }) {
+const Form = ({ route, method }) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
+    // loading screen is not used. Maybe to implement later
+    
     const navigate = useNavigate();
 
     const name = method === "login" ? "Login" : "Register";
@@ -21,14 +22,14 @@ function Form({ route, method }) {
             if (method === "login") {
                 localStorage.setItem(ACCESS_TOKEN, res.data.access);
                 localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
-                navigate("/")
+                navigate("/");
             } else {
-                navigate("/login")
-            }
+                navigate("/login");
+            };
         } catch (error) {
-            alert(error)
+            alert(error);
         } finally {
-            setLoading(false)
+            setLoading(false);
         }
     };
 
@@ -54,6 +55,6 @@ function Form({ route, method }) {
             </button>
         </form>
     );
-}
+};
 
-export default Form
+export default Form;

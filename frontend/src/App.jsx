@@ -11,15 +11,15 @@ import ProtectedRoute from "./components/ProtectedRoute"
 
 import './styles/App.scss';
 
-function Logout() {
+const Logout = () => {
     localStorage.clear()
     return <Navigate to="/login" />
-  }
+}
   
-  function RegisterAndLogout() {
+const RegisterAndLogout = () => {
     localStorage.clear()
     return <Register />
-  }
+}
 
 const App = () => {
     return (
