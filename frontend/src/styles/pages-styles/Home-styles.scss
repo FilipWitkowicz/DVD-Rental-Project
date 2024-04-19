@@ -1,0 +1,9 @@
+@use "../vars" as *;
+
+.home--container {
+  background-color: $background-color;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}

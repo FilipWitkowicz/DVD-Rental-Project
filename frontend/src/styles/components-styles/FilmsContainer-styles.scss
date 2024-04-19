@@ -1,0 +1,12 @@
+@use "../vars" as *;
+
+.FilmsContainer {
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 259px);
+  grid-template-rows: auto;
+  grid-gap: 30px;
+  justify-items: stretch;
+  //margin: auto;
+  overflow-x: visible;
+}

@@ -1,15 +1,10 @@
-import FilmWindow from "../components/FilmWindow";
-import filmsInfo from "../filmsInfo";
+import FilmsContainer from "../components/FilmsContainer";
+import "../styles/pages-styles/Home-styles.scss";
 
 const Home = () => {
-  const films = filmsInfo.map((film) => (
-    <FilmWindow key={film.id} filmInfo={film.film} />
-  ));
-
   return (
-    <div>
-      <h2>Home</h2>
-      {films}
+    <div className="home--container">
+      <FilmsContainer />;
     </div>
   );
 };

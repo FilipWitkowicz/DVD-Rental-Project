@@ -1,0 +1,24 @@
+@use "../vars" as *;
+
+%img-settings {
+  width: 259px;
+  height: 385px; //moze sprobuj z vh vw
+  object-fit: cover;
+}
+.FilmWindow--container {
+  img {
+    @extend %img-settings;
+  }
+}
+
+.FilmWindow--container-wide {
+  img {
+    @extend %img-settings;
+  }
+  display: flex;
+
+  flex-direction: row;
+  background-color: $gray-color;
+  grid-column: 1 / -1;
+  max-width: 70.3rem;
+}

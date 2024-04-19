@@ -69,4 +69,14 @@ export default [
         "American car designer Carroll Shelby and driver Ken Miles battle corporate interference and the laws of physics to build a revolutionary race car for Ford in order to defeat Ferrari at the 24 Hours of Le Mans in 1966. ",
     },
   },
+  {
+    id: 8,
+    film: {
+      title: "Whiplash",
+      image: "/img/image_8.png",
+      genre: "drama",
+      description:
+        "A promising young drummer enrolls at a cut-throat music conservatory where his dreams of greatness are mentored by an instructor who will stop at nothing to realize a student's potential.",
+    },
+  },
 ];
