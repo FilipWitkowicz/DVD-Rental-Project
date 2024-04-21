@@ -1,6 +1,19 @@
-@use 'vars' as *;
+@use "vars" as *;
 
 * {
-    margin: 0;
-    // font-family: ;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+button {
+  -webkit-appearance: none;
+  border-radius: 0;
+  text-align: inherit;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  color: inherit;
+  font: inherit;
 }

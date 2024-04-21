@@ -5,41 +5,23 @@ import FilmWindow from "./FilmWindow";
 import "../styles/components-styles/FilmsContainer-styles.scss";
 
 const FilmsContainer = () => {
-  const [filmsData, setFilmsData] = React.useState(
-    filmsInfo.map((film) => {
-      return {
-        ...film,
-        toggle: false,
-      };
-    })
-  );
+  const [toggledFilmID, setToggledFilmID] = React.useState(undefined);
 
   /// Zmien moze state na ID (przeciez moze byc tylko 1)_
   /// moze samo scrollowanie tez tu jebanac
 
   function handleClick(id) {
-    setFilmsData((prevFilms) => {
-      return prevFilms.map((film) => {
-        if (film.id === id) {
-          return {
-            ...film,
-            toggle: !film.toggle,
-          };
-        } else
-          return {
-            ...film,
-            toggle: false,
-          };
-      });
+    setToggledFilmID((prevToggledFilmID) => {
+      return id === prevToggledFilmID ? undefined : id;
     });
   }
 
-  const films = filmsData.map((film) => (
+  const films = filmsInfo.map((film) => (
     <FilmWindow
       key={film.id}
       id={film.id}
       filmInfo={film.film}
-      toggle={film.toggle}
+      toggle={toggledFilmID === film.id ? true : false}
       handleClick={handleClick}
     />
   ));

@@ -15,8 +15,10 @@
   img {
     @extend %img-settings;
   }
+  height: 385px;
   display: flex;
-
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   flex-direction: row;
   background-color: $gray-color;
   grid-column: 1 / -1;

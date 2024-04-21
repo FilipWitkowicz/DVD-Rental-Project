@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import "../styles/components-styles/FilmWindow-styles.scss";
+import FilmWindowDescription from "./FilmWindowDescription";
 
 const FilmWindow = (props) => {
   const filmInfo = props.filmInfo;
@@ -16,12 +17,13 @@ const FilmWindow = (props) => {
     <div
       ref={filmRef}
       className={`FilmWindow--container${props.toggle ? "-wide" : ""}`}
-      onClick={handleClick}
     >
-      <img src={filmInfo.image} alt={`Poster of the ${filmInfo.title} film`} />
-      {props.toggle ? (
-        <div className="FilmWindow--description">{filmInfo.description}</div>
-      ) : undefined}
+      <img
+        src={filmInfo.image}
+        alt={`Poster of the ${filmInfo.title} film`}
+        onClick={handleClick}
+      />
+      {props.toggle ? <FilmWindowDescription filmInfo={filmInfo} /> : undefined}
     </div>
   );
 };
