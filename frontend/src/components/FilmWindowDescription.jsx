@@ -11,7 +11,7 @@ const FilmWindowDescription = (props) => {
         {filmInfo.description}
       </section>
       <Button onClick={null} buttonType={"info"}>
-        Check
+        Check availability
       </Button>
     </div>
   );

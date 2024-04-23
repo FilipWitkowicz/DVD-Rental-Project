@@ -7,6 +7,22 @@
   grid-template-rows: auto;
   grid-gap: 30px;
   justify-items: stretch;
-  //margin: auto;
   overflow-x: visible;
+}
+
+@media (max-width: $layout-breakpoint-big) {
+  .FilmsContainer {
+    grid-template-columns: repeat(3, 259px);
+  }
+}
+@media (max-width: $layout-breakpoint-mid) {
+  .FilmsContainer {
+    grid-template-columns: repeat(2, 259px);
+  }
+}
+
+@media (max-width: $layout-breakpoint-small) {
+  .FilmsContainer {
+    grid-template-columns: repeat(1, 259px);
+  }
 }
