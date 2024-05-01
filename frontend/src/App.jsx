@@ -4,14 +4,14 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import YourFilms from './pages/YourFilms';
-
+import Navbar from './components/Navbar/Navbar';
 import './styles/App.scss';
 
 const App = () => {
     return (
         <BrowserRouter>
             <nav>
-                <p>DVD Rental Project</p>
+                <Navbar></Navbar>
             </nav>
             <main>
                 <Routes>

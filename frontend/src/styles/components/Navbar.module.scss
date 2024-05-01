@@ -1,0 +1,279 @@
+.NavbarAll{
+    position:sticky;
+    top: 0;
+}
+.Navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 20px;
+    background-color: #F7CB15;
+    color: #fff;
+    height: 5vh;
+}
+
+.logo {
+    color: #B86363;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    justify-content: center;
+}
+
+.searchPole {
+    padding: 8px;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 80%;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: #6C3636;
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: 5%;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+}
+
+.userInfo {
+    display: flex;
+    align-items: center;
+    padding: 1rem, 1rem;
+    z-index: 1;
+    width: 100%;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #FFFFFF;
+}
+
+.arrow {
+    cursor: pointer;
+}
+
+.arrowdown {
+    cursor: pointer;
+    transform: rotate(-90deg);
+}
+
+.dropdownList{
+    position: absolute;
+    top: 1.25rem;
+    right: 0;
+    background-color: #6C3636;
+    color: #fff;
+    list-style: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    z-index: 0;
+    width: 100%;
+    justify-content: center;
+    padding-inline-start: 0px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.dropdownList hr{
+    border: 1px solid #F7CB15;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5rem;
+}
+.arrowdown + .dropdownList {
+    display: block;
+}
+
+.dropdownList li {
+    padding: 5px 1rem 5px 1rem;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.iconMenu {
+    color: #F7CB15;
+    margin-right: 0.5rem;
+}
+
+.categoryMenu {
+    position: relative;
+    font-size: 2.5rem;
+}
+.hamburger, .searchButton{
+    display: none;
+}
+.searchActive {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    justify-content: center;
+}
+
+.categories {
+    overflow: hidden;
+    transition: height 0.3s ease;
+    display: none;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #6C3636;
+    color: #FFFFFF;
+    
+}
+.categories div{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+input[type="checkbox"] {
+    appearance: none; /* Wy³¹czenie domyœlnego wygl¹du */
+    width: 20px;
+    height: 20px;
+    border: 1px solid #F7CB15;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    margin-right: 2px;
+}
+input[type="checkbox"]:checked {
+    background-color: #B86363;
+}
+@media(max-width: 800px){
+    .user {
+        display: flex;
+        align-items: center;
+        position: relative;
+        background-color: #6C3636;
+        border-radius: 10px;
+        overflow: hidden;
+        min-width: 5%;
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+        padding-left: 0.20rem;
+        padding-right: 0.20rem;
+    }
+    .avatar {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: #FFFFFF;
+    }
+}
+@media (max-width: 500px) {
+    .Navbar{
+        justify-content: space-between;
+    }
+    .user{
+        display: none;
+    }
+    .search{
+        display: none;
+    }
+    .categoryMenu{
+        margin-left: 10px;
+        margin-right: 0px;
+    }
+    .hamburger, .searchButton {
+        display: inline-block;
+    }
+    .searchActive{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .searchPole{
+        padding: 6px;
+        margin-right: 10px;
+    }
+    .userActive {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        z-index: 1;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #6C3636;
+    }
+    .dropdownList {
+        border-radius: 0;
+    }
+    .userInfo {
+        margin-top: 10vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1;
+        width: 100%;
+        justify-content: space-around;
+        gap: 1rem;
+        background-color: #6C3636;
+        color: #FFFFFF;
+        margin-bottom: 0;
+        position: absolute;
+        top: 20%;
+    }
+    .avatar {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: #FFFFFF;
+    }
+    .dropdownList {
+        position: static;
+        background-color: #6C3636;
+        color: #fff;
+        list-style: none;
+        width: 100%;
+        justify-content: center;
+        padding-inline-start: 0px;
+        position: absolute;
+        top: 40%;
+    }
+    .dropdownList li {
+        cursor: pointer;
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    .dropdownList hr{
+    border: 1px solid #F7CB15;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    .iconCancel {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        color: #F7CB15;
+        font-size: 1.5rem;
+    }
+}
