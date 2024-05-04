@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import api from "../../api";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../../constants";
 
+import styles from '../../styles/components/Form.module.scss';
+
 const Form = ({ route, method }) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -11,7 +13,7 @@ const Form = ({ route, method }) => {
     
     const navigate = useNavigate();
 
-    const name = method === "login" ? "Login" : "Register";
+    const name = method === "login" ? "Log in" : "Register";
 
     const handleSubmit = async (e) => {
         setLoading(true);
@@ -34,23 +36,31 @@ const Form = ({ route, method }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="form-container">
-            <h1>{name}</h1>
+        <form onSubmit={handleSubmit} className={styles.formContainer}>
+            <div className={styles.formName}>
+                <h1 className={styles.h1Name}>{name}</h1>
+            </div>
             <input
-                className="form-input"
+                className={styles.formInput}
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                placeholder="Username"
+                placeholder="Login"
             />
             <input
-                className="form-input"
+                className={styles.formInput}
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
             />
-            <button className="form-button" type="submit">
+            {method === "login" &&
+            <div className={styles.additionalLoginOptions}>
+                <p className={styles.forgotPassword}>I forgot my password</p>
+                <p className={styles.noAccount}>I don't have an account</p>
+            </div>
+            }
+            <button className={styles.formButton} type="submit">
                 {name}
             </button>
         </form>
