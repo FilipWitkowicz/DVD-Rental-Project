@@ -1,8 +1,9 @@
 import { useState } from "react";
-import api from "../api";
 import { useNavigate } from "react-router-dom";
-import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
-import "../styles/App.scss"
+import api from "../../api";
+import { ACCESS_TOKEN, REFRESH_TOKEN } from "../../constants";
+
+import styles from '../../styles/components/Form.module.scss';
 
 function Form({ route, method }) {
     const [username, setUsername] = useState("");
