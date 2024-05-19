@@ -1,10 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+
 :root {
-    --primary-color: hsl(0, 100%, 50%);
-    --secondary-color: hsl(0, 0%, 0%);
-    // these are examples
-    // to talk over the theme of the app
+  --background-color: rgba(14, 14, 14, 1);
+  --contrast-background-color: rgba(255, 255, 255, 1);
+  --primary-color: rgba(247, 203, 21, 1);
+  --secondary-color: rgba(108, 54, 54, 1);
+  --accent-color: rgba(184, 99, 99, 1);
+  --gray-color: rgba(217, 217, 217, 1);
+  font-family: Alta, sans-serif;
+  background-color: var(--background-color);
+  // these are examples
+  // to talk over the theme of the app
 }
 
 // SCSS variables mapping (works with 'use')
+$background-color: var(--background-color);
+$contrast-background-color: var(--contrast-background-color);
 $primary-color: var(--primary-color);
 $secondary-color: var(--secondary-color);
+$accent-color: var(--accent-color);
+$gray-color: var(--gray-color);
+
+$font-stack: Alta, sans-serif;
+
+$layout-breakpoint-small: 600px;
+$layout-breakpoint-mid: 845px;
+$layout-breakpoint-big: 1145px;

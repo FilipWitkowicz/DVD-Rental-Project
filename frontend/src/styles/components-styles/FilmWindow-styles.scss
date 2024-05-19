@@ -1,0 +1,36 @@
+@use "../vars" as *;
+
+%img-settings {
+  width: 259px;
+  height: 385px; //moze sprobuj z vh vw
+  object-fit: cover;
+}
+.FilmWindow--container {
+  img {
+    @extend %img-settings;
+  }
+}
+
+.FilmWindow--container-wide {
+  img {
+    @extend %img-settings;
+  }
+
+  height: 385px;
+  display: flex;
+
+  flex-direction: row;
+
+  grid-column: 1 / -1;
+  max-width: 70.3rem;
+}
+
+@media (max-width: $layout-breakpoint-small) {
+  .FilmWindow--container-wide {
+    img {
+      /* display: none; */
+      position: absolute;
+      z-index: 1;
+    }
+  }
+}
