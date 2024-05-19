@@ -1,0 +1,38 @@
+@use "../../vars" as *;
+
+@mixin theme($theme: $secondary-color) {
+  background: $theme;
+  box-shadow: 0 0 1px rgba($theme, 0.25);
+  @if $theme == $primary-color {
+    color: $background-color;
+  } @else {
+    color: #fff;
+  }
+  padding: 0.6rem 0.8rem;
+  border-radius: 7px;
+  text-align: center;
+}
+
+@mixin onclick() {
+  scale: 0.9;
+  filter: brightness(70%);
+}
+
+.info {
+  @include theme;
+}
+.info:active {
+  @include onclick();
+}
+.alert {
+  @include theme($theme: $primary-color);
+}
+.alert:active {
+  @include onclick();
+}
+.success {
+  @include theme($theme: $accent-color);
+}
+.success:active {
+  @include onclick();
+}
