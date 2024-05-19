@@ -1,10 +1,12 @@
-import React from 'react';
-import { PrintNotes } from '../components/PrintNotes/PrintNotes';
+import FilmsContainer from "../components/FilmsContainer";
+import "../styles/pages-styles/Home-styles.scss";
+
 const Home = () => {
-    return (
-        <div>
-        </div>
-    );
+  return (
+    <div className="home--container">
+      <FilmsContainer />;
+    </div>
+  );
 };
 
 export default Home;

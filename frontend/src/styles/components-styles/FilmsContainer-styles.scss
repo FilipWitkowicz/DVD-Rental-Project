@@ -1,0 +1,28 @@
+@use "../vars" as *;
+
+.FilmsContainer {
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 259px);
+  grid-template-rows: auto;
+  grid-gap: 30px;
+  justify-items: stretch;
+  overflow-x: visible;
+}
+
+@media (max-width: $layout-breakpoint-big) {
+  .FilmsContainer {
+    grid-template-columns: repeat(3, 259px);
+  }
+}
+@media (max-width: $layout-breakpoint-mid) {
+  .FilmsContainer {
+    grid-template-columns: repeat(2, 259px);
+  }
+}
+
+@media (max-width: $layout-breakpoint-small) {
+  .FilmsContainer {
+    grid-template-columns: repeat(1, 259px);
+  }
+}
