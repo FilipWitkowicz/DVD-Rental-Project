@@ -7,7 +7,9 @@ import YourFilms from './pages/YourFilms';
 import Login from './pages/Login';
 import Register from './pages/Register';
 
+import Navbar from './components/Navbar/Navbar';
 import ProtectedRoute from "./components/ProtectedRoute"
+
 
 import './styles/App.scss';
 
@@ -25,7 +27,7 @@ const App = () => {
     return (
         <BrowserRouter>
             <nav>
-                <p>DVD Rental Project</p>
+                <Navbar></Navbar>
             </nav>
             <main>
                 <Routes>
