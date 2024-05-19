@@ -2,7 +2,7 @@
 
 :root {
   --background-color: rgba(14, 14, 14, 1);
-  --contrast-background-color: rgba(255, 255, 255, 1);
+  --contrast-background: rgba(255, 255, 255, 1);
   --primary-color: rgba(247, 203, 21, 1);
   --secondary-color: rgba(108, 54, 54, 1);
   --accent-color: rgba(184, 99, 99, 1);
@@ -13,7 +13,7 @@
 
 // SCSS variables mapping (works with 'use')
 $background-color: var(--background-color);
-$contrast-background-color: var(--contrast-background-color);
+$contrast-background: var(--contrast-background);
 $primary-color: var(--primary-color);
 $secondary-color: var(--secondary-color);
 $accent-color: var(--accent-color);
