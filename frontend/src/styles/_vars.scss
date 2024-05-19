@@ -7,10 +7,8 @@
   --secondary-color: rgba(108, 54, 54, 1);
   --accent-color: rgba(184, 99, 99, 1);
   --gray-color: rgba(217, 217, 217, 1);
-  font-family: Alta, sans-serif;
+  font-family: Alata, sans-serif;
   background-color: var(--background-color);
-  // these are examples
-  // to talk over the theme of the app
 }
 
 // SCSS variables mapping (works with 'use')
@@ -21,8 +19,9 @@ $secondary-color: var(--secondary-color);
 $accent-color: var(--accent-color);
 $gray-color: var(--gray-color);
 
-$font-stack: Alta, sans-serif;
+$font-stack: Alata, sans-serif;
 
 $layout-breakpoint-small: 600px;
 $layout-breakpoint-mid: 845px;
 $layout-breakpoint-big: 1145px;
+
